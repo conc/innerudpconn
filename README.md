@@ -40,7 +40,8 @@ package main
 
 import (
 	"github.com/conc/innerudpconn/server"
-	"log"
+	"net"
+    "log"
 )
 
 func main() {
@@ -49,7 +50,7 @@ func main() {
 		IP:   net.IPv4(0, 0, 0, 0),
 		Port: 4333,
 	}
-	server.TransactProcess = testReq
+	server.TransactProcess = dealTestReq
 
 	server.Start()
 	return
